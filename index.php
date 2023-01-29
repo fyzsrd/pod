@@ -15,6 +15,7 @@ include('includes/dbconnection.php');
     <!-- Stylesheets
     ============================================= -->
     <link href="assets/css/external.css" rel="stylesheet">
+    <!-- <link href="assets/css/bootstrap.min.css" rel="stylesheet"> -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
@@ -237,9 +238,9 @@ while($row=mysqli_fetch_array($query))
 
     <!-- Footer Scripts
 ============================================= -->
-    <script src="assets/js/jquery-2.2.4.min.js"></script>
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/functions.js"></script>
+    <script src="./assets/js/jquery-2.2.4.min.js"></script>
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/functions.js"></script>
 </body>
 
 </html>

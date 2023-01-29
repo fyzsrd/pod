@@ -35,7 +35,7 @@ while ($row=mysqli_fetch_array($ret)) {
                         <!-- .col-md-2 end -->
                         <div class="col-xs-12 col-sm-3 col-md-2 col-md-offset-1 widget--links">
                             <div class="widget--title">
-                                <h5>Pages</h5>
+                                <h5></h5>
                             </div>
                             <div class="widget--content">
                                 <ul class="list-unstyled mb-0">
@@ -59,9 +59,24 @@ while ($row=mysqli_fetch_array($ret)) {
                             </div>
                         </div>
                         <!-- .col-md-2 end -->
-                        <div class="col-xs-12 col-sm-12 col-md-4 widget--newsletter">
-                            <img src="assets/images/about/download.jpg" width="500" height="300" alt="logo">
-                        </div>
+                      <!-- .col-md-2 end -->
+                      <div class="col-xs-12 col-sm-12 col-md-4 widget--newsletter">
+                            <div class="widget--title">
+                                <h5>newsletter</h5>
+                            </div>
+                            <div class="widget--content">
+                                <form class="newsletter--form mb-40">
+                                    <input type="email" class="form-control" id="newsletter-email" placeholder="Email Address">
+                                    <button type="submit"><i class="fa fa-arrow-right"></i></button>
+                                </form>
+                                <h6>Get In Touch</h6>
+                                <div class="social-icons">
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-vimeo"></i></a>
+                                </div>
+                            </div>
+                        </div>>
                         <!-- .col-md-4 end -->
 
                     </div>
@@ -76,7 +91,7 @@ while ($row=mysqli_fetch_array($ret)) {
                 <div class="container">
                     <div class="row footer--bar">
                         <div class="col-xs-12 col-sm-12 col-md-12">
-                            <span>POD Market</span>
+                            <span>© 2019 ,  Capsule Market Place</span>
                         </div>
 
                     </div>
