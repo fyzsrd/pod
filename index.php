@@ -120,21 +120,21 @@ while($row2=mysqli_fetch_array($query2))
                 <!-- Slide #1 -->
                 <div class="slide--item bg-overlay bg-overlay-dark3">
                     <div class="bg-section">
-                        <img src="assets/images/slider/slide-bg/3.jpg" alt="background">
+                        <img src="assets/images/slider/slide-bg/7.jpg" alt="background">
                     </div>
                 </div>
                 <!-- .slide-item end -->
                 <!-- Slide #2 -->
                 <div class="slide--item bg-overlay bg-overlay-dark3">
                     <div class="bg-section">
-                        <img src="assets/images/slider/slide-bg/1.jpg" alt="background">
+                        <img src="assets/images/slider/slide-bg/2.jpg" alt="background">
                     </div>
                 </div>
                 <!-- .slide-item end -->
                 <!-- Slide #3 -->
                 <div class="slide--item bg-overlay bg-overlay-dark3">
                     <div class="bg-section">
-                        <img src="assets/images/slider/slide-bg/3.jpg" alt="background">
+                        <img src="assets/images/slider/slide-bg/7.jpg" alt="background">
                     </div>
                 </div>
                 <!-- .slide-item end -->

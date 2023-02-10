@@ -194,6 +194,11 @@ $_SESSION['uemail']=$ret['Email'];
                         <div class="module module-property pull-left">
                             <a href="add-property.php"  class="btn"><i class="fa fa-plus"></i> add property</a>
                         </div>
+
+                        <!-- my changes============================ -->
+                        
+
+                        <!-- end changes===================== -->
                         <?php  }
                        ?>
                     </div>

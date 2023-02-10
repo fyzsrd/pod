@@ -15,13 +15,37 @@ $query=mysqli_query($con,"update tblfeedback set Is_Publish='1' where id='$rvid'
 echo "<script>window.location.href='approved-review.php'</script>";
 }
 
+
+
+
 //Delete the review
 if (isset($_GET['delrid'])) {
 $rid=intval($_GET['delrid']);
-$query=mysqli_query($con,"delete from tblfeedback where id='$rvid'");
+// $query=mysqli_query($con,"delete from tblfeedback where id='$rvid'");
+$query=mysqli_query($con,"DELETE FROM `tblfeedback` WHERE `Is_Publish`=0");
+
  echo '<script>alert("Review deleted.")</script>';
 echo "<script>window.location.href='unapproved-reviews.php'</script>";
 }
+
+
+
+
+
+// deletethe review2
+
+  // sql to delete a record
+//   $sql = "DELETE FROM customers WHERE id='6' ";
+
+//   if ($conn->query($sql) === TRUE) {
+//      header("Location: index.php");
+//   } else {
+//       echo "Error deleting record: " . $conn->error;
+//   }
+
+//   $conn->close();
+
+
  ?>
 <!doctype html>
 <html lang="en">
@@ -84,6 +108,7 @@ echo "<script>window.location.href='unapproved-reviews.php'</script>";
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="card">
                             <h5 class="card-header">Unapproved Reviews</h5>
+                            <!-- <button type="button" class="btn btn-danger">clear the list</button> -->
                             <div class="card-body">
                                 <div class="table-responsive">
 <table class="table table-striped table-bordered first">
@@ -119,6 +144,7 @@ while ($row=mysqli_fetch_array($qry)) {
                    <td><?php  echo $row['PostingDate'];?></td>
 <td><a href="unapproved-reviews.php?rid=<?php echo $row['rid'];?>" onclick="return confirm('Do you really want to Approve this review ?')">Approve</a> | 
     <a href="unapproved-reviews.php?delrid=<?php echo $row['rid'];?>" onclick="return confirm('Do you really want to delete ?')>">Delete</a></td>
+  
                 </tr>
                 <?php 
 $cnt=$cnt+1;
@@ -143,7 +169,7 @@ $cnt=$cnt+1;
             <?php include_once('includes/footer.php');?>
             <!-- ============================================================== -->
             <!-- end footer -->
-            <!-- ============================================================== -->
+            <!-- ============================================================== --> 
         </div>
     </div>
     <!-- ============================================================== -->

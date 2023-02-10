@@ -23,7 +23,7 @@ if(isset($_POST['login']))
  
 <head>
    
-    <title>Real Estate Management System || Login</title>
+    <title>pod Market|| Login</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
     <link href="../assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
@@ -79,6 +79,10 @@ if(isset($_POST['login']))
 
                 </div>
             </div>
+            <!-- my oroooo --------------------------->
+
+            
+            <!-- end========================== -->
         </div>
     </div>
   
