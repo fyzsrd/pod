@@ -21,8 +21,8 @@ echo "<script>window.location.href='approved-review.php'</script>";
 //Delete the review
 if (isset($_GET['delrid'])) {
 $rid=intval($_GET['delrid']);
-// $query=mysqli_query($con,"delete from tblfeedback where id='$rvid'");
-$query=mysqli_query($con,"DELETE FROM `tblfeedback` WHERE `Is_Publish`=0");
+$query=mysqli_query($con,"delete from tblfeedback where id='$rid'");
+// $query=mysqli_query($con,"DELETE FROM `tblfeedback` WHERE `Is_Publish`=0");
 
  echo '<script>alert("Review deleted.")</script>';
 echo "<script>window.location.href='unapproved-reviews.php'</script>";
