@@ -47,7 +47,7 @@ $msg="Your current password is wrong";
 
     <!-- Document Title
     ============================================= -->
-    <title>Real Estate Management System|| Change Password</title>
+    <title>pod market|| Change Password</title>
     <script type="text/javascript">
 function checkpass()
 {

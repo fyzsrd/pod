@@ -10,13 +10,27 @@ if(isset($_POST['signup']))
      $mobno=$_POST['mobilenumber'];
     $email=$_POST['email'];
     $usertype=$_POST['usertype'];
-       $password=md5($_POST['password']);
+    $password=md5($_POST['password']); 
 
+       if (!preg_match ("/^[0-9]*$/", $mobno) ){  
+           $ErrMsg = "<script>alert('only numbers are accepted');</script>";  
+           echo $ErrMsg;  
+       } else {  
+          
+     
+       
+
+       $mobile=mysqli_query($con, "select MobileNumber from tbluser where MobileNumber='$mobno'");
+       $mobresult=mysqli_fetch_array($mobile);
     $ret=mysqli_query($con, "select Email from tbluser where Email='$email'");
     $result=mysqli_fetch_array($ret);
-    if($result>0){
- echo "<script>alert('This email already associated with another account');</script>";
+    if($result>0 || $mobresult>0){
+ echo "<script>alert('This email or mobile already associated with another account');</script>";
     }
+     
+ //mobile number checekd if it is on database
+
+
     else{
     $query=mysqli_query($con, "insert into tbluser(FullName, Email, MobileNumber, Password,UserType) value('$fname', '$email','$mobno', '$password','$usertype' )");
     if ($query) {
@@ -27,7 +41,34 @@ if(isset($_POST['signup']))
     echo "<script>alert('Something Went Wrong. Please try again');</script>";
     }
 }
+       }
 }
+//v1 of folrm validation without mobile validation
+// if(isset($_POST['signup']))
+//   {
+      
+//     $fname=$_POST['fullname'];
+//      $mobno=$_POST['mobilenumber'];
+//     $email=$_POST['email'];
+//     $usertype=$_POST['usertype'];
+//        $password=md5($_POST['password']);
+
+//     $ret=mysqli_query($con, "select Email from tbluser where Email='$email'");
+//     $result=mysqli_fetch_array($ret);
+//     if($result>0){
+//  echo "<script>alert('This email already associated with another account');</script>";
+//     }
+//     else{
+//     $query=mysqli_query($con, "insert into tbluser(FullName, Email, MobileNumber, Password,UserType) value('$fname', '$email','$mobno', '$password','$usertype' )");
+//     if ($query) {
+//  echo "<script>alert('You have successfully registered');</script>";
+//   }
+//   else
+//     {
+//     echo "<script>alert('Something Went Wrong. Please try again');</script>";
+//     }
+// }
+// }
 
 //code for login
 if(isset($_POST['signin']))
@@ -158,7 +199,7 @@ $_SESSION['uemail']=$ret['Email'];
                                                                 <input type="email" class="form-control" name="email" id="email" required="true" placeholder="Email Address">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control" name="mobilenumber" id="mobilenumber" maxlength="10" required="true" placeholder="Mobile Number">
+                                                                <input type="text" class="form-control"   name="mobilenumber" id="mobilenumber" maxlength="10" required="true" placeholder="Mobile Number">
                                                             </div>
                                                             <div class="form-group">
                                                                 <input type="password" class="form-control" name="password" id="password" required="true" placeholder="Password">
@@ -194,6 +235,11 @@ $_SESSION['uemail']=$ret['Email'];
                         <div class="module module-property pull-left">
                             <a href="add-property.php"  class="btn"><i class="fa fa-plus"></i> add property</a>
                         </div>
+
+                        <!-- my changes============================ -->
+                        
+
+                        <!-- end changes===================== -->
                         <?php  }
                        ?>
                     </div>

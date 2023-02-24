@@ -18,7 +18,7 @@ echo "<script>window.location.href='unapproved-reviews.php'</script>";
 //Delete the review
 if (isset($_GET['delrid'])) {
 $rid=intval($_GET['delrid']);
-$query=mysqli_query($con,"delete from tblfeedback where id='$rvid'");
+$query=mysqli_query($con,"delete from tblfeedback where id='$rid'");
  echo '<script>alert("Review deleted.")</script>';
 echo "<script>window.location.href='new-reviews.php'</script>";
 }
@@ -28,7 +28,7 @@ echo "<script>window.location.href='new-reviews.php'</script>";
  
 <head>
    
-    <title>Real Estate Managment System || Manage Reviews</title>
+    <title>pod|| Manage Reviews</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
     <link href="../assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
@@ -117,8 +117,7 @@ while ($row=mysqli_fetch_array($qry)) {
 <td><a href="view-property-details.php?viewid=<?php  echo $row['pid'];?>"><?php  echo $row['PropertyTitle'];?></a></td>
                    <td><?php  echo $row['UserRemark'];?></td>
                    <td><?php  echo $row['PostingDate'];?></td>
-<td><a href="approved-review.php?rid=<?php echo $row['rid'];?>" onclick="return confirm('Do you really want to Unapprove this review ?')">Unapprove</a> | 
-    <a href="approved-review.phpdelrid=<?php echo $row['rid'];?>" onclick="return confirm('Do you really want to delete ?')>">Delete</a></td>
+<td><a href="approved-review.php?rid=<?php echo $row['rid'];?>" onclick="return confirm('Do you really want to Unapprove this review ?')">Unapprove</a> </td>
                 </tr>
                 <?php 
 $cnt=$cnt+1;
